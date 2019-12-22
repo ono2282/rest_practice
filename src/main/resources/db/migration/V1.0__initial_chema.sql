@@ -1,16 +1,15 @@
-DROP TABLE IF EXISTS city;
-CREATE TABLE city (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255),
-    state VARCHAR(255),
-    country VARCHAR(255)
+CREATE TABLE book (
+    book_id INT AUTO_INCREMENT,
+    title VARCHAR(255),
+    price INT,
+    PRIMARY KEY (book_id)
 );
 
-CREATE TABLE `user` (
-  `user_id` varchar(8) NOT NULL,
-  `user_name` varchar(16) NOT NULL,
-  `password` varchar(32) NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`user_id`)
+CREATE TABLE sales (
+    sales_id INT AUTO_INCREMENT,
+    book_id INT,
+    sales_count INT,
+    sales_datetime DATETIME,
+    PRIMARY KEY (sales_id),
+    FOREIGN KEY (book_id) REFERENCES book(book_id)
 );
