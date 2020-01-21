@@ -27,5 +27,4 @@ public class User implements Serializable {
     private String email;
 
     private Date createTime;
-    // getter/setter記載略
 }

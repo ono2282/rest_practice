@@ -13,13 +13,13 @@ import com.example.practice.app.mapper.TestMapper;
 @RequestMapping("api/sample")
 public class RestApiController {
 
-	@Autowired
-	private TestMapper testmapper;
+    @Autowired
+    private TestMapper testmapper;
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
     public City getCity() {
-    	return testmapper.getCity();
+        return testmapper.getCity();
     }
 
     @RequestMapping("/")
