@@ -18,8 +18,14 @@ D=root_password -d -p 3306:3306 mysql
 ```
 
 ### mysqlを立ち上げる
-TODO 立ち上げコマンドを記述<br>
-TODO 自動起動コマンドを記述<br>
+* mysql 起動
+```
+docker start test-db
+```
+* 自動起動用設定 -docker立ち上げ時にmysqlが自動的に立ち上がるように設定
+```
+docker update --restart=always test-db
+```
 
 ## APIサーバを起動
 * gradle - pr - Tasks - bootRunを実行
@@ -31,7 +37,7 @@ TODO 自動起動コマンドを記述<br>
 * +Newボタンを押下
 * Enter request URLに下記URLを入力してSendボタンを押下
 http://localhost:8080/api/book/
-* 以下のレスポンスが返ってくれば疎通成功!!
+* 以下のレスポンスが返ってくれば疎通成功！
 ```
 [
     {
